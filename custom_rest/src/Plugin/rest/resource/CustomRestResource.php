@@ -88,7 +88,7 @@ class CustomRestResource extends ResourceBase
             if (is_object($node)) {
                 $response_result['nid'] = $node->id();
                 $response_result['title'] = $node->getTitle();
-
+                $response_result['body'] = $node->get('body')->getValue();
                 $response = new ResourceResponse($response_result);
                 // Configure caching for results
                 if ($response instanceof CacheableResponseInterface) {
